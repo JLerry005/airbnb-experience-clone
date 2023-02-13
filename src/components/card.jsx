@@ -2,22 +2,24 @@ import React from 'react';
 import Photo from '../assets/katie-zaferes.png';
 import Star from '../assets/star.png'
 
-const card = () => {
+const card = (props) => {
+    console.log(props)
     return (
 
         <div className='card'>
-            <img src={Photo} alt="" />
+            <img src={props.img} alt="card-img" className='card--image' />
             <div className='card--stats'>
                 <img className='card--star' src={Star} alt="star" />
-                <span>5.0</span>
-                <span className='gray'>(6) • </span>
-                <span className='gray'>USA</span>
+                <span>{props.rating}</span>
+                <span className='gray'>{props.review} • </span>
+                <span className='gray'>{props.country}</span>
             </div>
-            <p>Life lessons with Katie Zaferes</p>
-            <p><span className='bold'>From $136</span> / person</p>
+            <p>{props.title}</p>
+            <p><span className='bold'>From ${props.price}</span> / person</p>
         </div>
 
     )
 }
+
 
 export default card;

@@ -54,6 +54,11 @@ section {
   font-size: 12px;
 }
 
+.card--image {
+  width: 100%;
+  border-radius: 9px;
+}
+
 .card--stats {
   display: flex;
   align-items: end;

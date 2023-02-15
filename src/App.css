@@ -5,6 +5,7 @@
 
 body {
   margin: 0;
+  padding-inline: 5px;
 }
 
 .bold {
@@ -48,9 +49,16 @@ section {
   margin-top: 0;
 }
 
+.card--container {
+  display: flex;
+  /* gap: 5px; */
+  flex-wrap: wrap;
+}
+
 .card {
-  width: 175px;
-  padding: 20px;
+  /* background-color: rgb(255, 115, 115); */
+  width: 180px;
+  padding: 7px;
   font-size: 12px;
 }
 

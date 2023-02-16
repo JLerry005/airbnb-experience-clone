@@ -3,18 +3,34 @@ import Photo from '../assets/katie-zaferes.png';
 import Star from '../assets/star.png'
 
 const card = (props) => {
-    console.log(props)
+
+    let badgeText
+    if (props.openSpots === 0) {
+        badgeText = "SOLD OUT"
+    } else if (props.location === "Online") {
+        badgeText = "ONLINE"
+    }
+
     return (
         <div className='card'>
-            <img src={props.img} alt="card-img" className='card--image' />
+            {
+                badgeText &&
+                <div className='card--badge'>{badgeText}</div>
+            }
+            <img
+                src={props.coverImg} alt="card-img"
+                className='card--image'
+            />
             <div className='card--stats'>
                 <img className='card--star' src={Star} alt="star" />
-                <span>{props.rating}</span>
-                <span className='gray'>({props.review}) • </span>
+                <span>{props.stats.rating}</span>
+                <span className='gray'>({props.stats.reviewCount}) • </span>
                 <span className='gray'>{props.location}</span>
             </div>
             <p>{props.title}</p>
-            <p><span className='bold'>From ${props.price}</span> / person</p>
+            <p>
+                <span className='bold'>From ${props.price}</span> / person
+            </p>
         </div>
 
     )
